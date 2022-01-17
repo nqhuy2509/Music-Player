@@ -47,6 +47,18 @@ const app = {
             singer: 'Phát Huy TK ProX',
             path: "./musics/DoanTuyetNangDiLofiVersion-PhatHuyT4KProx-7011827.mp3",
             image: "./imgs/doantuyetnangdi.jpg"
+        },
+        {
+            name: 'Chiều thu họa bóng nàng',
+            singer: 'Datkaa',
+            path: './musics/ChieuThuHoaBongNang-DatKaaQTBeatz-6890373.mp3',
+            image: './imgs/cthbn.jpg'
+        },
+        {
+            name: 'Năm qua đã làm gì',
+            singer: 'Noo Phước Thịnh',
+            path: './musics/NamQuaDaLamGiGalaNhacViet2021-NooPhuocThinh-6937919.mp3',
+            image: './imgs/nqdlg.jpg'
         }
     ],
     setConfig: function(key,value) {
@@ -136,7 +148,7 @@ const app = {
                 progress.value = progressPcent
             }
         }
-        
+
         // Xử lí khi tua
         progress.onchange = function(e){
             var seekTime = e.target.value * audio.duration /100
@@ -170,6 +182,11 @@ const app = {
             audio.play()
             _this.render()
             _this.scrollToActiveSong()
+        }
+
+        // Xử lí next double click next
+        nextBtn.ondblclick = function(e){
+            console.log(e.target)
         }
 
         // Xử lí random bật tắt
